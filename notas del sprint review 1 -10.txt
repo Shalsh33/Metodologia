@@ -1,0 +1,9 @@
+1 - Crear una tabla para el testeo. (listo)
+2 - Agregar los links en el repositorio. (listo)
+3 - El prototipo debe llevar una vista de TODAS las pantallas.
+4 - Sobreestimamos mucho el primer release.
+     "Este sprint me pareció muy cómodo porque todos sabiamos que teníamos que hacer"
+5 - Las épicas no se puede desglosar en una única user story. Si no le encuentro más, significa que
+   no era épica o que está mal trabajado.
+6 - El ABM es una sola épica, no se divide en 3.
+7 - Revisar criterios de aceptación.
