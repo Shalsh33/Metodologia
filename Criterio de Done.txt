@@ -1,5 +1,10 @@
 DONE_:
-TODOS LOS CRITERIOS DE ACEPTACIÓN COMPLETOS
-FUNCIONALIDAD CHEQUEADA POR AL MENOS 1 PERSONA
-HAYA SIDO MERGEADO DENTRO DE GIT
-DOCUMENTACION
+  Revisar buenas practicas:
+    Identacion
+    Sin repeticion de codigo
+    Respetar declaracion de clases, variables
+  Codigo comentado:
+    Unicamente en metodos, funciones
+  Testeado por al menos 1 persona diferente a los desarrolladores (formato en Documentacion>Testeo)
+  Merge a Git
+    Resolver conflictos de codigo
