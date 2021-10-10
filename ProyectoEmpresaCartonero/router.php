@@ -1,7 +1,7 @@
 <?php
 
 //importar controladores!
-include_once "app/controller/static.controller.php";
+include_once "app/controllers/UserController.php";
 
 
 // defino la base url para la construccion de links con urls semánticas
@@ -19,7 +19,27 @@ $params = explode('/', $action);
 
 // determina que camino seguir según la acción
 switch ($params[0]) {
+    
+    case 'home':
+        $controller = new StaticController();
+        $controller->showHome();
+        break;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //ejemplos de el router de maty
     case 'home':
         $controller = new StaticController();
         $controller->showHome();
