@@ -1,5 +1,13 @@
 
-
+Rust Matias y Tomas carrera:
+	Creacion del controlador de retiros
+		__construct(): constructor de variables
+		showForm(): muestra la pantalla del formulario
+		postRetiro(): llama al modelo para la creacion del posteo
+	Creacion del modelo de retiros
+		__construct(): abre conexion
+		connect(): conecta con la db
+		postearRetiro(): Crea el posteo en la db
 
 
 
