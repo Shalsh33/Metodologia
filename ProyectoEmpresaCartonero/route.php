@@ -1,1 +1,0 @@
-/* aca mostraremos todas las rutas para acceder desde el menu de la aplicacion */
