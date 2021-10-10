@@ -1,10 +1,8 @@
 <?php
+
+//importar controladores!
 include_once "app/controller/static.controller.php";
-include_once "app/controller/market.controller.php";
-include_once "app/controller/auth.controller.php";
-include_once "app/helper/auth.helper.php";
-include_once "app/controller/user.controller.php";
-include_once "app/controller/island.controller.php";
+
 
 // defino la base url para la construccion de links con urls semánticas
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
