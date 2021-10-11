@@ -10,8 +10,8 @@ class UserView{
         $this->smarty = new Smarty();
     }
 
-    function solicitud_de_retiro($materiales_aceptados){
-        $this->smarty->assign('materiales',$materiales_aceptados);
+    function solicitud_de_retiro($action){
+        $this->smarty->assign('action',$action);
         $this->smarty->display('../templates/solicitud_de_retiro.tpl');
     }
 
