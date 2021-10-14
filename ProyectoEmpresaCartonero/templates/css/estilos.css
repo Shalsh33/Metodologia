@@ -1,0 +1,29 @@
+form>*{
+    text-align: left;
+}
+
+select.select_c{
+    width: 21.5%;
+}
+
+#send-form{
+    margin-left: -108%;
+}
+
+footer{
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+footer>p{
+    margin-top: auto;
+}
+
+.footer-a{
+
+    height: 5rem;
+    transition: height 0.3s ease-in-out;
+}

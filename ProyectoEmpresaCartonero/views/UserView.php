@@ -1,6 +1,6 @@
 <?php
 
-require_once('../smarty/libs/Smarty.class.php');
+require_once('smarty/libs/Smarty.class.php');
 
 class UserView{
 
@@ -10,9 +10,10 @@ class UserView{
         $this->smarty = new Smarty();
     }
 
-    function solicitud_de_retiro($action){
+    function showFormRetiro($action){
+        $this->smarty->assign("titulo","Solicitar retiro");
         $this->smarty->assign('action',$action);
-        $this->smarty->display('../templates/solicitud_de_retiro.tpl');
+        $this->smarty->display('templates/solicitud_de_retiro.tpl');
     }
 
 
