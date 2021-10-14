@@ -1,11 +1,7 @@
 {include file="templates/header.tpl"}
 
 
-<header class="masthead">
-    <div class="container">
-        <div class="masthead-heading">Reci-coop</div>
-        <div class="masthead-subheading">Solicitar un retiro</div>
-        <div class="row mt-4 mb-4"></div>
+
             
         <form action="{$action}" id="form-retiro">
 
@@ -58,8 +54,7 @@
 
 
         </form>
-    </div>
-</header>
+
 
 
 {include file="templates/footer.tpl"}
