@@ -1,5 +1,7 @@
 <?php
 
+include_once("app/views/UserView.php");
+
 class RetirosController {
 
     private $RetirosView;
@@ -7,7 +9,7 @@ class RetirosController {
 
     function __construct() {
         //////////////////////////////////
-        $this-> RetirosView = ?;
+        $this-> RetirosView = new UserView();
         $this-> RetirosModel = new RetirosModel();
     }
 
@@ -17,11 +19,11 @@ class RetirosController {
 
     function postRetiro(){
         //obtengo los datos del retiro
-        $nombre = $_POST['nombre']
-        $apellido = $_POST['apellido']
-        $direccion = $_POST['direccion']
-        $franja_horaria = $_POST['franja_horaria']
-        $categoria = $_POST['categoria']
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $direccion = $_POST['direccion'];
+        $franja_horaria = $_POST['franja_horaria'];
+        $categoria = $_POST['categoria'];
         
         //mandamos los datos a el modelo
         $this->RetirosModel->postearRetiro($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria);
