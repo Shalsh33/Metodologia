@@ -11,15 +11,18 @@ class MaterialsModel{
 
     private function connect(){
         // 2. Conexion con la base
-        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'root', '');
+        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'noelia', 'noelia.2021');
         return $db;
     }
 
     /** obtiene un listado de materiales aceptados para el reciclado de los mismos **/
     function obtenerMateriales(){
-        $query = $this->db->prepare('SELECT * FROM materiales WHERE condicion='aceptados'');
+        $query = $this->db->prepare('SELECT * FROM materiales WHERE es_aceptado=1');
         $query ->execute();
-        
+        // Obtengo la respuesta con un fetchAll 
+        $materiales=$query->fetchAll(PDO::FETCH_OBJ);
+
+        return $materiales;
     }
 
 

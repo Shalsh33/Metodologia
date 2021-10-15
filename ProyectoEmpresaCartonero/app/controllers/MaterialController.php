@@ -1,7 +1,7 @@
 <?php
 
-include_once 'models/MaterialsModel.php';
-include_once 'views/MaterialsView.php';
+include_once 'app/models/MaterialsModel.php';
+include_once 'app/views/MaterialsView.php';
 
 class MaterialController
 {
@@ -24,6 +24,6 @@ class MaterialController
         $materiales = $this->model->obtenerMateriales();
 
         // actualizo la vista
-        $this->view->mostrarListaMateriales($materiales);
+        $this->view->mostrarMaterialesAceptados($materiales);
     }
 }

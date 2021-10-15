@@ -24,7 +24,7 @@
                              <th>Acciones</th>
                          </tr>
                      </thead>
-                     <tbody id="tabla-Body-categorias">
+                     <tbody id="tabla-Body-materiales">
                          {foreach from=$materiales item=mat}
                              <tr>
                                  <td>
@@ -34,9 +34,9 @@
                                      {$mat->descripcion}
                                  </td>
                                  <td>
-                                     <a class='btn btn-danger btn-sm' href='eliminar_mat/{$mat->id}'>Eliminar
+                                     <a class='btn btn-danger btn-sm' href='eliminar_mat/{$mat->id_material}'>Eliminar
                                      </a>
-                                     <a class='btn btn-info btn-sm' href='editar_mat/{$mat->id}'>Editar
+                                     <a class='btn btn-info btn-sm' href='editar_mat/{$mat->id_material}'>Editar
                                      </a>
                                  </td>
                              </tr>
