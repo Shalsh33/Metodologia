@@ -26,3 +26,4 @@ class MaterialController
         // actualizo la vista
         $this->view->mostrarListaMateriales($materiales);
     }
+}

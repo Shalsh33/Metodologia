@@ -1,6 +1,6 @@
 <?php
 include_once "app/controllers/RetirosController.php";
-
+include_once "app/controllers/MaterialController.php";
 
 // defino la base url para la construccion de links con urls semánticas
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -27,7 +27,10 @@ switch ($params[0]) {
         $controller = new RetirosController();
         $controller-> postRetiro();
         break;
-
+    case 'listmateriales':
+        $controller = new MaterialController();
+        $controller-> mostrarMateriales();
+        break;
 
     default:
         echo('404 Page not found');
