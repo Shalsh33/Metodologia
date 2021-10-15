@@ -29,7 +29,7 @@ switch ($params[0]) {
         $controller-> postRetiro();
         break;*/
     // listar materiales aceptados por la cooperativa
-    case 'listmateriales'
+    case 'listmateriales':
         $controller = new MaterialController();
         $controller-> mostrarMateriales();
         break;

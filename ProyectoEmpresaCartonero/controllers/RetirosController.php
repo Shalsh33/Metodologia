@@ -10,7 +10,7 @@ class RetirosController {
 
     function __construct() {
         //////////////////////////////////
-        $this-> RetirosView = ?;
+        $this-> RetirosView = '';
         $this-> RetirosModel = new RetirosModel();
     }
 

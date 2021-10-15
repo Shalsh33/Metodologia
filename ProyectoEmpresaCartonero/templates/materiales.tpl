@@ -48,5 +48,6 @@
          </div>
      </div>
  </section>
+  {include file='condiciones.tpl'}
  </main>
  {include file='footer.tpl'}
