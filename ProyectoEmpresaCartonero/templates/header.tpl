@@ -33,3 +33,10 @@
                 </div>
             </div>
         </nav>
+
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading">Reci-coop</div>
+        <div class="masthead-subheading">{$titulo}</div>
+        <div class="row mt-4 mb-4"></div>
+
