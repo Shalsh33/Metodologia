@@ -1,4 +1,8 @@
+UserView.php -- función ShowFormRetiro recibe la acción que debe realizar el form (Según esté en el router) y muestra la página del formulario para solicitar un nuevo retiro de cartonero.
 
+Templates de Header y Footer creados con la información y los vínculos a las hojas de estilo de la página.
+
+Template solicitud_de_retiro muestra el formulario
 
 
 
