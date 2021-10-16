@@ -3,7 +3,7 @@
 
 
             
-        <form action="{$action}" id="form-retiro">
+        <form action="{$action}" id="form-retiro" method="POST" >
 
             <div class="row">
                 <div class="flex col-md-6 col-sd-12">
