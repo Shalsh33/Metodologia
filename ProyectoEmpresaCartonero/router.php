@@ -23,7 +23,7 @@ switch ($params[0]) {
         break;
 
     //////////////////////////////////
-    case 'postblas':
+    case 'postRetiro':
         $controller = new RetirosController();
         $controller-> postRetiro();
         break;

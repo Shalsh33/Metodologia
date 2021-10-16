@@ -17,9 +17,8 @@ class RetirosModel{
 
     function postearRetiro($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria){
         $query = $this->db->prepare('INSERT INTO retiros_cartonero(nombre, apellido, direccion, telefono, franja_horaria, categoria) VALUES (?,?,?,?,?,?)');
-        $query ->execute([$nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria])
-        
-    }
+        $query ->execute([$nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria]);
 
+    }
 
 }
