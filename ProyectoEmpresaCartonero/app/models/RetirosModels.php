@@ -11,7 +11,7 @@ class RetirosModel{
 
     private function connect(){
         // 2. Conexion con la base
-        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'noelia', 'noelia.2021');
+        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'root', '');
         return $db;
     }
 

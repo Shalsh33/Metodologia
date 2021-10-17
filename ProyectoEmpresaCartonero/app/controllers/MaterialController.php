@@ -1,7 +1,6 @@
 <?php
 
-include_once 'app/models/MaterialsModel.php';
-include_once 'app/views/MaterialsView.php';
+include_once 'app/views/MaterialesView.php';
 
 class MaterialController
 {
@@ -11,8 +10,7 @@ class MaterialController
 
     function __construct()
     {
-        $this->model = new MaterialsModel();
-        $this->view = new MaterialsView();
+       $this->view = new MaterialesView();
     }
 
     /**
@@ -20,10 +18,7 @@ class MaterialController
      */
     function mostrarMateriales()
     {
-        // obtiene las diferentes materiales del modelo
-        $materiales = $this->model->obtenerMateriales();
-
         // actualizo la vista
-        $this->view->mostrarMaterialesAceptados($materiales);
+        $this->view->show();
     }
 }
