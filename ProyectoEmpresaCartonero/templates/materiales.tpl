@@ -60,8 +60,6 @@
 
     </div>
 
-
-
-
 </main>
 {include file="templates/footer.tpl"}
+
