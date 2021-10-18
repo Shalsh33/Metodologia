@@ -13,8 +13,8 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
        
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/estilos.css" rel="stylesheet" />
+        <link href="templates/css/styles.css" rel="stylesheet" />
+        <link href="templates/css/estilos.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
