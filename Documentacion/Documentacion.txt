@@ -11,6 +11,24 @@
     último vínculo. Las imagenes fueron cambiadas de formato svg a png para que se muestren en todos los navegadores sin problemas.
 
 
+10/10 - Carrera, Rust - Historia TPE-20 / Incidencias: TPE-56, TPE-58, TPE-59:
 
+	TPE-56 - Creacion de base de datos
+
+	TPE-58 - Implementacion del controlador
+
+		Función showForm()
+			Muestreo de la vista del formulario
+
+		Función postRetiro()
+			Obtencion de los datos provenientes del post,
+			y envio hacia el modelo
+
+	TPE-59 - Implementacion del modelo 
+		
+		Función postearRetiro()
+			Recepcion los datos del controlador,
+			Preparacion de la sentencia SQL,
+			Ejecucion de la sentencia SQL
 
 
