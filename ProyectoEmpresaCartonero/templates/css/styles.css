@@ -10,6 +10,15 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+html, body{
+  min-height: 100%;
+}
+body{
+  background-image: url("../assets/img/coop.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11396,13 +11405,10 @@ p {
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
+
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/coop.png");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
+ 
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -11764,11 +11770,4 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.lista_mat{
-  list-style: none; /* Quitamos los marcadores */
-  padding: 0; /* Quitamos el padding por defecto de la lista */
-  margin-left: 10px; /* Separamos la lista de la izquierda */
-  text-align: left;
 }

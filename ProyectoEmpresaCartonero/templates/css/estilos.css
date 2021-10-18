@@ -26,3 +26,10 @@ footer>p{
     height: 5rem;
     transition: height 0.3s ease-in-out;
 }
+
+.lista_mat{
+    list-style: none; /* Quitamos los marcadores */
+    padding: 0; /* Quitamos el padding por defecto de la lista */
+    margin-left: 10px; /* Separamos la lista de la izquierda */
+    text-align: left;
+  }
