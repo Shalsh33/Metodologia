@@ -6,7 +6,9 @@
 
     Template solicitud_de_retiro muestra el formulario
 
-
+17/10 - Blas - Historia TPE-20:
+    Revisado el documento de Testeo. Corregidos los vínculos de los tpl de la vista de esta sección. Aún falta conocer el ruteo para el 
+    último vínculo. Las imagenes fueron cambiadas de formato svg a png para que se muestren en todos los navegadores sin problemas.
 
 
 

@@ -18,7 +18,7 @@ class RetirosController {
     }
 
     function postRetiro(){
-        var_dump($_POST);
+        
         //obtengo los datos del retiro
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
@@ -27,10 +27,17 @@ class RetirosController {
         $franja_horaria = $_POST['franja_horaria'];
         $categoria = $_POST['categoria'];
         
+        if (empty($nombre) || empty($apellido) || empty($direccion) || empty($telefono) || empty($franja_horaria) || empty($categoria)){
+
+            header("Location: " . BASE_URL . "showFormRetiro");
+            
+            die();
+        }
         
         //mandamos los datos a el modelo
         $this->RetirosModel->postearRetiro($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria);
         header("Location: " . BASE_URL . "showFormRetiro"); //diseñar el home
+
     }
 
 }
