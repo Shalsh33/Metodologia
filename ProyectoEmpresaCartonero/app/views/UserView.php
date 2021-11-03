@@ -16,9 +16,4 @@ class UserView{
         $this->smarty->display('templates/solicitud_de_retiro.tpl');
     }
 
-    function showError($msg){
-        $this->smarty->assign('msg', $msg);
-        $this->smarty->display('templates/error.tpl');
-    }
-
 }
