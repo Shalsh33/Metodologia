@@ -27,7 +27,15 @@ class MaterialController
      */
     function agregarMateriales($mensaje){
 
-        $this->view->mostrarFormulario($mensaje);
+        $this->view->mostrarFormularioAlta($mensaje);
+    }
+
+    /**
+     * Muestra el formulario de actualizacion de materiales
+     */
+    function actualizarMateriales($mensaje){
+
+        $this->view->mostrarFormularioModificar($mensaje);
     }
 
     /**
@@ -60,24 +68,31 @@ class MaterialController
     function actualizarUnMaterial(){
 
         // toma los datos a actualizar ingresados en el formulario
-        $id = $_POST['id_material'];
+        $id = $_GET['id_material'];
         $nombre = $_POST['nombre'];
         $descripcion = $_POST['descripcion'];
         $es_aceptado = $_POST['es_aceptado'];
 
-        // verifico campos obligatorios
-        if (empty($nombre) || empty($descripcion)|| empty($es_aceptado)) {
-            $mensaje = "Debe completar los datos requeridos para la carga de material.";
-            $this->mostrarMateriales($mensaje);
+        // verifica que sea numerico y que exista
+        if ((is_numeric($id)) && ($this->model->existeMaterial($id)>0)){
+            // verifico campos obligatorios
+            if (empty($nombre) || empty($descripcion)|| empty($es_aceptado)) {
+                $mensaje = "Debe completar los datos requeridos para la carga de material.";
+                $this->mostrarMateriales($mensaje);
+            }else{
+                // si se verifico todo se actualiza el material
+                $idAct = $this->model->actualizarMaterial($nombre, $descripcion, $es_aceptado, $id);
+                if ($idAct) {
+                    $mensaje = "Se actualizo de manera exitosa";
+                } else {
+                    $mensaje = "No se pudo actualizar el material. Verifique los datos ingresados y vuelva a intentarlo.";
+                }
+                $this->mostrarMateriales($mensaje);
+            } 
         }else{
-            $idAct = $this->model->actualizarMaterial($nombre, $descripcion, $es_aceptado, $id);
-            if ($idAct) {
-                $mensaje = "Se actualizo de manera exitosa";
-            } else {
-                $mensaje = "No se pudo actualizar el material. Verifique los datos ingresados y vuelva a intentarlo.";
-            }
+            $mensaje = "No se pudo actualizar el material. Verifique los datos ingresados y vuelva a intentarlo.";
             $this->mostrarMateriales($mensaje);
-        } 
+        }
     }
 
     /**

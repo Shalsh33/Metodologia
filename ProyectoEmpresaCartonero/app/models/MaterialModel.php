@@ -53,6 +53,18 @@ class MaterialModel{
         return $query->rowCount();
     }
     
-    
+    /**
+     * Verifica que el material este registrado y no haya sido modificado el parametro
+    */
+    function existeMaterial($id){
+
+        $query = $this->db->prepare('SELECT id_material FROM materiales where id = ? MIMIT 1');
+        $query->execute([$id]);
+
+        // Obtengo la respuesta con un fetchAll 
+        $numeroDeFilas = $query->rowCount();
+
+        return $numeroDeFilas;
+    }
     
 }
