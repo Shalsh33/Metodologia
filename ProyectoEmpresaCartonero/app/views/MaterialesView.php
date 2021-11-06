@@ -16,5 +16,18 @@ class MaterialesView{
         $this->smarty->display('./templates/materiales.tpl');
     }
 
+    function listadoDeMateriales(){
+
+    }
+
+    function mostrarFormularioAlta(){
+
+    }
+
+    function mostrarFormularioModificar(){
+
+    }
+
+
 
 }

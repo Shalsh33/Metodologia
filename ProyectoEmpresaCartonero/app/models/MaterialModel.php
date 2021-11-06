@@ -19,7 +19,7 @@ class MaterialModel{
     /**
      * Registra un nuevo material
      */
-    private funcion agregarMaterial($nombre, $descripcion, $es_aceptado){
+    private function agregarMaterial($nombre, $descripcion, $es_aceptado){
         
         $query = $this->db->prepare('
         INSERT INTO materiales (nombre, descripcion, es_aceptado )
