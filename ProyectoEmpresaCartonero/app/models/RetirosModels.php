@@ -11,15 +11,16 @@ class RetirosModel{
 
     private function connect(){
         // 2. Conexion con la base
-        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'noelia', 'noelia.2021');
+        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'root', '');
         return $db;
     }
 
     function postearRetiro($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria){
         $query = $this->db->prepare('INSERT INTO retiros_cartonero(nombre, apellido, direccion, telefono, franja_horaria, categoria) VALUES (?,?,?,?,?,?)');
         $query ->execute([$nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria]);
-        
-    }
 
+
+
+    }
 
 }
