@@ -7,7 +7,7 @@ class MaterialsView {
     /** 
      *   Muestra el listado de materiales aceptados actuales
     **/
-    function mostrarMateriales($materiales) {
+    function mostrarMaterialesAceptados($materiales) {
         
         $smarty = new Smarty();
 
