@@ -19,13 +19,17 @@ class MaterialModel{
     /**
      * Registra un nuevo material
      */
-    private function agregarMaterial($nombre, $descripcion, $es_aceptado){
-        
+    private function insertarMaterial($nombre, $descripcion, $es_aceptado){
+        $aceptado = 1 ;
+
+        if ($es_aceptado == 'N'){
+            $aceptado = 0 ;
+        }
         $query = $this->db->prepare('
         INSERT INTO materiales (nombre, descripcion, es_aceptado )
                 VALUES ( ? , ? , ?)');
 
-        $query->execute([$nombre, $descripcion, $es_aceptado]);
+        $query->execute([$nombre, $descripcion, $aceptado]);
        
         return $this->db->lastInsertId();
     }
@@ -65,6 +69,20 @@ class MaterialModel{
         $numeroDeFilas = $query->rowCount();
 
         return $numeroDeFilas;
+    }
+
+    function obtenerMateriales() {
+
+        // Se envia la consulta
+        $query = $this->db->prepare('
+        SELECT * FROM materiales
+            order by id_material');
+        $query->execute();
+
+        // Obtengo la respuesta con un fetchAll 
+        $materiales = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $materiales;
     }
     
 }

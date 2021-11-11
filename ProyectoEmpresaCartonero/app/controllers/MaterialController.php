@@ -16,19 +16,20 @@ class MaterialController
     /**
      * Imprime la lista de materiales que hay disponibles para el reciclado
      */
-/*     function mostrarMateriales($mensaje)
-    {
-        // actualizo la vista
-        $this->view->listadoDeMateriales($mensaje);
-    } */
-
-    /* Por ahora sigue la versión anterior */
-    
     function mostrarMateriales()
+    {
+        $materiales = $this->model->obtenerMateriales();
+        // actualizo la vista
+        $this->view->listadoDeMateriales($materiales);
+    }
+
+    /* Versión anterior - estática */
+
+    /*   function mostrarMateriales()
     {
         // actualizo la vista
         $this->view->show();
-    }
+    } */
 
     /**
      * Muestra el formulario de carga de materiales
@@ -62,7 +63,7 @@ class MaterialController
         }else{
             $id = $this->model->insertarMaterial($nombre, $descripcion, $es_aceptado);
             if ($id) {
-                $mensaje = "Se cargo el material de manera exitosa";
+                $mensaje = "Se cargó el material de manera exitosa";
             } else {
                 $mensaje = "No se pudo crear el material. Verifique los datos ingresados y vuelva a intentarlo.";
             }
@@ -103,6 +104,27 @@ class MaterialController
         }
     }
 
+    function editarMaterial($id)
+    {
+        $valido = true;
+
+        if (is_numeric($id)) {
+            $material = $this->model->obtenerMaterial($id);
+            if ($material) {
+                $this->view->editarMaterialVista($material);
+            } else {
+                $valido = false;
+                $mensaje = "No se pudieron recuperar los datos del material";
+                $this->mostrarMateriales($mensaje);
+            }
+        } else {
+                $valido = false;
+                $mensaje = "No se pudieron recuperar los datos del material";
+                $this->mostrarMateriales($mensaje);
+            }
+    }
+    
+    
     /**
      * Elimina el material registrado en el sistema
      */

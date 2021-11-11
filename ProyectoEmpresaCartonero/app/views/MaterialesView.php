@@ -34,15 +34,31 @@ class MaterialesView
         $this->smarty->display('./templates/materiales.tpl');
     }
 
-    function listadoDeMateriales()
+    function listadoDeMateriales($materiales)
     {
+        $smarty = new Smarty();
+
+        $smarty->assign('materiales', $materiales);
+    
+        $smarty->display('templates/lista_material.tpl');
     }
 
     function mostrarFormularioAlta()
     {
+        $this->smarty->assign(
+            'titulo',
+            "Formulario de ingreso de materiales aceptados por la Cooperativa"
+        );
+        $this->smarty->display('./templates/form_materiales.tpl');
     }
 
     function mostrarFormularioModificar()
     {
+    }
+    
+    function editarMaterialVista($material){
+        $smarty = new Smarty(); 
+        $smarty->assign('material', $material);
+        $smarty->display('templates/form_edit_material.tpl'); 
     }
 }
