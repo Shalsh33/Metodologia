@@ -16,5 +16,12 @@ class MaterialesView{
         $this->smarty->display('./templates/materiales.tpl');
     }
 
+    function registro_de_materiales($materiales = null){
+        $this->smarty->assign('titulo',
+         "Registro de Materiales");
+        $this->smarty->assign('materiales',$materiales);
+        $this->smarty->display('templates/registro_de_materiales.tpl');
+    }
+
 
 }
