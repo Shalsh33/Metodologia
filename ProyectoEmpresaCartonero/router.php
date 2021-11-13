@@ -33,7 +33,7 @@ switch ($params[0]) {
         break;
     case 'insertar_mat':
         $controller = new MaterialController();
-        $controller-> agregarUnMaterial();
+        $controller-> agregarMateriales();
         break;    
     case 'eliminar_mat':
         $controller = new MaterialController();
@@ -47,7 +47,7 @@ switch ($params[0]) {
         break; 
     case 'guardar_mat':
         $controller = new MaterialController();
-        $controller->actualizarUnMaterial();
+        $controller->agregarUnMaterial();
         break;    
     default:
         echo('404 Page not found');

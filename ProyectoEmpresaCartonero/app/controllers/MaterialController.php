@@ -1,26 +1,28 @@
 <?php
 
 include_once 'app/views/MaterialesView.php';
+include_once 'app/models/MaterialModel.php';
 
 class MaterialController
 {
-
-    private $model;
+  
     private $view;
+    private $model;
 
     function __construct()
     {
        $this->view = new MaterialesView();
+       $this->model = new MaterialModel();
     }
 
     /**
      * Imprime la lista de materiales que hay disponibles para el reciclado
      */
-    function mostrarMateriales()
+    function mostrarMateriales($mensaje='')
     {
         $materiales = $this->model->obtenerMateriales();
         // actualizo la vista
-        $this->view->listadoDeMateriales($materiales);
+        $this->view->listadoDeMateriales($materiales, $mensaje);
     }
 
     /* Versión anterior - estática */
@@ -34,7 +36,7 @@ class MaterialController
     /**
      * Muestra el formulario de carga de materiales
      */
-    function agregarMateriales($mensaje){
+    function agregarMateriales($mensaje=''){
 
         $this->view->mostrarFormularioAlta($mensaje);
     }
@@ -57,7 +59,7 @@ class MaterialController
         $es_aceptado = $_POST['es_aceptado'];
 
         // verifico campos obligatorios
-        if (empty($nombre) || empty($descripcion)|| empty($es_aceptado)) {
+        if (empty($nombre) || empty($descripcion) || empty($es_aceptado)) {
             $mensaje = "Debe completar los datos requeridos para la carga de material.";
             $this->agregarMateriales($mensaje);
         }else{
@@ -92,7 +94,7 @@ class MaterialController
                 // si se verifico todo se actualiza el material
                 $idAct = $this->model->actualizarMaterial($nombre, $descripcion, $es_aceptado, $id);
                 if ($idAct) {
-                    $mensaje = "Se actualizo de manera exitosa";
+                    $mensaje = "Se actualizó de manera exitosa";
                 } else {
                     $mensaje = "No se pudo actualizar el material. Verifique los datos ingresados y vuelva a intentarlo.";
                 }
@@ -133,7 +135,7 @@ class MaterialController
         if (is_numeric($id)) {
             $borrado = $this->model->eliminarMaterial($id);
             if ($borrado) {
-                $mensaje = "El material ha sido eliminad0.";
+                $mensaje = "El material ha sido eliminado.";
             } else {
                 $mensaje = "Ups!!! ... No se pudo borrar el material.";
             }

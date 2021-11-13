@@ -11,15 +11,15 @@ class MaterialModel{
 
     private function connect(){
         // 2. Conexion con la base
-        //$db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'root', '');
-        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'noelia', '');
+        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'root', '');
+        //$db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'noelia', '');
         return $db;
     }
 
     /**
      * Registra un nuevo material
      */
-    private function insertarMaterial($nombre, $descripcion, $es_aceptado){
+    function insertarMaterial($nombre, $descripcion, $es_aceptado){
         $aceptado = 1 ;
 
         if ($es_aceptado == 'N'){
@@ -37,11 +37,11 @@ class MaterialModel{
     /**
      * Actualiza los datos de un material
     */
-    private function actualizarMaterial($nombre, $descripcion, $es_aceptado, $id){
+    function actualizarMaterial($nombre, $descripcion, $es_aceptado, $id){
         
         $query = $this->db->prepare('
         UPDATE materiales SET nombre = ?, descripcion = ?, es_aceptado = ? 
-            WHERE id = ?');
+            WHERE id_material = ?');
         $query->execute([$nombre, $descripcion, $es_aceptado, $id]);
     }
 
@@ -62,7 +62,8 @@ class MaterialModel{
     */
     function existeMaterial($id){
 
-        $query = $this->db->prepare('SELECT id_material FROM materiales where id = ? MIMIT 1');
+        $query = $this->db->prepare('
+            SELECT id_material FROM materiales where id_material = ? MIMIT 1');
         $query->execute([$id]);
 
         // Obtengo la respuesta con un fetchAll 
@@ -83,6 +84,19 @@ class MaterialModel{
         $materiales = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $materiales;
+    }
+
+    function obtenerMaterial($id)
+    {
+
+        // Enviar la consulta 
+        $query = $this->db->prepare('SELECT * FROM materiales where id_material = ?');
+        $query->execute([$id]);
+
+        // Obtengo la respuesta con un fetchAll 
+        $material = $query->fetch(PDO::FETCH_OBJ);
+
+        return $material;
     }
     
 }

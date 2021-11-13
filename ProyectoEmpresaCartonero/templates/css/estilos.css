@@ -33,3 +33,7 @@ footer>p{
     margin-left: 10px; /* Separamos la lista de la izquierda */
     text-align: left;
   }
+
+#tablaMateriales  {
+    color: white;
+}

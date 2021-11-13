@@ -1,25 +1,17 @@
 {include file="templates/header.tpl"}
-<section class="container-fluid fondo_container">
-    <div class="row">
+<div class="row">
         <div class="col-12">
-            <h2>Listado de materiales</h2>
             {if !empty($mensaje)}
-                <div class="alert alert-dismissible alert-warning">
-                    <h4 class="alert-heading">Datos erróneos</h4>
-                    <p>{$mensaje}</p>
-                </div>
-            {/if}
-            {if !empty($mensajeBien)}
                 <div class="alert alert-dismissible alert-success" role="alert">
                     <h4 class="alert-heading">Datos actualizados</h4>
-                    <p>{$mensajeBien}</p>
+                    <p>{$mensaje}</p>
                 </div>
             {/if}
             <div class="btn-group m-3">
                 <a class='btn btn-success btn-sm' href='insertar_mat'>Nuevo material</a>
             </div>
             <div class="table-responsive">
-                <table class="table mt-3 text-left" id="tablaCategorias">
+                <table class="table mt-3 text-left" id="tablaMateriales">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -28,7 +20,7 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody id="tabla-Body-categorias">
+                    <tbody id="tabla-Body-materiales">
                         {foreach from=$materiales item=mat}
                             <tr>
                                 <td>
@@ -38,12 +30,16 @@
                                     {$mat->descripcion}
                                 </td>
                                 <td>
-                                    {$mat->es_aceptado}
+                                    {if $mat->es_aceptado eq true}
+                                        Si
+                                    {else}
+                                       No
+                                    {/if}
                                 </td>
                                 <td>
-                                    <a class='btn btn-danger btn-sm' href='eliminar_mat/{$mat->id}'>Eliminar
+                                    <a class='btn btn-danger btn-sm' href='eliminar_mat/{$mat->id_material}'>Eliminar
                                     </a>
-                                    <a class='btn btn-info btn-sm' href='editar_mat/{$mat->id}'>Editar
+                                    <a class='btn btn-info btn-sm' href='editar_mat/{$mat->id_material}'>Editar
                                     </a>
                                 </td>
                             </tr>
@@ -54,6 +50,6 @@
 
         </div>
     </div>
-</section>
+
 </main>
 {include file="templates/footer.tpl"}

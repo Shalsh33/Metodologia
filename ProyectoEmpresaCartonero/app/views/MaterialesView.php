@@ -18,11 +18,11 @@ class MaterialesView
     function mostrarMaterialesAceptados($materiales)
     {
 
-        $smarty = new Smarty();
+        $this->smarty->debugging = true;
+        $this->smarty->assign('materiales', $materiales);
+        $this->smarty->assign('titulo', "Lista de materiales");
 
-        $smarty->assign('materiales', $materiales);
-
-        $smarty->display('templates/materiales.tpl');
+        $this->smarty->display('templates/lista_material.tpl');
     }
     
     function show()
@@ -34,21 +34,25 @@ class MaterialesView
         $this->smarty->display('./templates/materiales.tpl');
     }
 
-    function listadoDeMateriales($materiales)
+    function listadoDeMateriales($materiales, $mensaje)
     {
-        $smarty = new Smarty();
-
-        $smarty->assign('materiales', $materiales);
-    
-        $smarty->display('templates/lista_material.tpl');
+        $this->smarty->assign('materiales', $materiales);
+        $this->smarty->assign(
+            'titulo',
+            "Listado de materiales"
+        );
+        $this->smarty->assign('mensaje', $mensaje );
+        $this->smarty->display('templates/lista_material.tpl');
     }
 
-    function mostrarFormularioAlta()
+    function mostrarFormularioAlta($mensaje)
     {
         $this->smarty->assign(
             'titulo',
-            "Formulario de ingreso de materiales aceptados por la Cooperativa"
+            "Ingreso de materiales"
         );
+        $this->smarty->assign(
+            'mensaje', $mensaje );
         $this->smarty->display('./templates/form_materiales.tpl');
     }
 
@@ -57,8 +61,11 @@ class MaterialesView
     }
     
     function editarMaterialVista($material){
-        $smarty = new Smarty(); 
-        $smarty->assign('material', $material);
-        $smarty->display('templates/form_edit_material.tpl'); 
+        $this->smarty->assign('material', $material);
+        $this->smarty->assign(
+            'titulo',
+            "Editar material"
+        );
+        $this->smarty->display('templates/form_edit_material.tpl'); 
     }
 }
