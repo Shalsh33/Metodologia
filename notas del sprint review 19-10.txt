@@ -1,0 +1,17 @@
+Configurar el burn down chart en Jira
+El siguiente sprint review se va a analizar el gráfico
+El siguiente sprint hay que desarrollar:
+	Obtener listado de pedidos de retiro (Sencillo, no es necesario implementar mucho algoritmo)
+	Tiene que tener un filtro (Por rango de días)
+	Solo vista en pantalla.
+	Va a haber que modificar las historias para adaptarlo a este nuevo requerimiento.
+
+	ABM de materiales aceptados
+	no hace falta hacer login para secretaria.
+	(Va a estar protegido, pero por ahora no se implementó)
+
+	Pesaje de materiales (Va a ser manual)
+	Form para imputar
+	(No es necesario hacer la tabla de cartoneros)
+	(Hardcodeados los cartoneros o bbdd)
+	Sin consulta de recorridos.

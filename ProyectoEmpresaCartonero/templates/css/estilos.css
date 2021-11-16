@@ -1,0 +1,60 @@
+form>*{
+    text-align: left;
+}
+select.select_c{
+    width: 21.5%;
+}
+
+#send-form{
+    margin-left: -108%;
+}
+
+footer{
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+footer>p{
+    margin-top: auto;
+}
+
+.footer-a{
+
+    height: 5rem;
+    transition: height 0.3s ease-in-out;
+}
+
+.lista_mat{
+    list-style: none; /* Quitamos los marcadores */
+    padding: 0; /* Quitamos el padding por defecto de la lista */
+    margin-left: 10px; /* Separamos la lista de la izquierda */
+    text-align: left;
+  }
+
+
+.listaRetiros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e6f0da;
+    background-color: #11853c80;
+    border:  3px solid #68b132;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin: 13px 0px;
+}
+
+.listaRetiros p{
+    margin: 3px 10px;
+}
+
+
+.Retiros{
+    display: flex;
+    width: 100vw ;
+    justify-content: center;
+    align-items: center;
+}

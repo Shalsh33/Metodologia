@@ -17,9 +17,26 @@ class RetirosModel{
 
     function postearRetiro($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria){
         $query = $this->db->prepare('INSERT INTO retiros_cartonero(nombre, apellido, direccion, telefono, franja_horaria, categoria) VALUES (?,?,?,?,?,?)');
-        $query ->execute([$nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria])
+        $query ->execute([$nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria]);
+
+
+
+    }
+
+
+    function getRetiros(){
+
+        $query = $this->db->prepare('SELECT * FROM retiros_cartonero');
+
+        $query->execute();
+        
+        $retiros = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $retiros;
+
         
     }
+
 
 
 }
