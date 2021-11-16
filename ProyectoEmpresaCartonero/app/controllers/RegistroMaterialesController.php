@@ -9,12 +9,12 @@ class RegistroMaterialesController {
 
     function __construct() {
         //////////////////////////////////
-        $this-> RegistroMaterialesView = new RegistroMaterialesView();
+        $this-> RegistroMaterialesView = new MaterialesView();
         $this-> RegistroMaterialesModel = new RegistroMaterialesModel();
     }
 
     function showFormRegistroMat(){
-        $this->RegistroMaterialesView->showFormRegistro("postRegistroMat");
+        $this->RegistroMaterialesView->registro_de_materiales("postRegistroMat");
     }
 
     function postRegistroMat(){
