@@ -12,7 +12,7 @@ class AdminView{
 
     function showRetiros($retiros){
         
-        $this->smarty->assign("titulo","Listar retiros");
+        $this->smarty->assign("titulo","Lista de retiros");
         $this->smarty->assign('retiros',$retiros);
         $this->smarty->display('templates/retiros.tpl');
         

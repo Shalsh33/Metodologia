@@ -49,6 +49,7 @@ footer>p{
 
 .listaRetiros p{
     margin: 3px 10px;
+    padding: 0px 10px 0px 10px;
 }
 
 
@@ -57,4 +58,5 @@ footer>p{
     width: 100vw ;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }

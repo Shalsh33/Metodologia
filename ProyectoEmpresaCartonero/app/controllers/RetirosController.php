@@ -46,8 +46,15 @@ class RetirosController {
 
     function showListRetiros(){
 
-        $retiros = $this->RetirosModel->getRetiros();
-        $this->AdminView->showRetiros($retiros);
+        if (empty($_GET['fechaselect'])){
+            $retiros = $this->RetirosModel->getRetiros();
+            $this->AdminView->showRetiros($retiros);
+        }else{
+            $retiros = $this->RetirosModel->getRetiros($_GET['fechaselect']);
+            $this->AdminView->showRetiros($retiros);
+        }
+
+        
 
     }
 

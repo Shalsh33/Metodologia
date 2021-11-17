@@ -2,9 +2,18 @@
 
 <!--Se deben visualizar los datos de nombre y apellido del vecino, 
 horario preferido, domicilio, materiales a retirar y espacio que ocupa-->
+<!-- aca va el formulario-->
 
-<section>
 
+<section class="Retiros">
+
+    <form action="listRetiros" id="form-retiro" method="GET">
+        <p>Filtrar por fecha</p>
+        <input type="date" name="fechaselect" id="fechaselect">
+        <button> Filtrar</button>
+    </form>
+    
+    
     {foreach from=$retiros item=retiro}
 
 
