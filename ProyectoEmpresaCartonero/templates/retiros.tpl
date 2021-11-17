@@ -7,7 +7,7 @@ horario preferido, domicilio, materiales a retirar y espacio que ocupa-->
 
 <section class="Retiros">
 
-    <form action="listRetiros" id="form-retiro" method="GET">
+    <form action="listRetiros" id="form-retiro" method="GET" class="formretiros">
         <p>Filtrar por fecha</p>
         <input type="date" name="fechaselect" id="fechaselect">
         <button> Filtrar</button>
@@ -24,6 +24,7 @@ horario preferido, domicilio, materiales a retirar y espacio que ocupa-->
             <p>Horario: {$retiro->franja_horaria}</p>
             <p>Direccion: {$retiro->direccion}</p>
             <p>Categoria: {$retiro->categoria}</p>
+            <p>Categoria: {$retiro->fecha_creacion}</p>
             
         </div>
 

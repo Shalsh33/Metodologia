@@ -15,7 +15,6 @@ footer{
     justify-content: space-between;
     margin-left: 10%;
     margin-right: 10%;
-
 }
 footer>p{
     margin-top: auto;
@@ -59,4 +58,36 @@ footer>p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.formretiros{
+    margin: 0px;
+    padding: 0xp 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.formretiros p{
+    margin: 20px 0px;
+}
+
+.formretiros button{
+    background-color: #11853c80;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border:  3px solid #68b132;
+    margin-left: 10px;
+}
+
+.formretiros input{
+    background-color: #11853c80;
+    border:  3px solid #68b132;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: 10px;
 }
