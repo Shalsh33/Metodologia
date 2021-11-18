@@ -61,3 +61,14 @@
 	TPE- Modificar el controlador de retiros para soporter el listado
 		Creacion de las siguientes funciones:
 			showListRetiros()
+			
+17/11 - Carrizo, Noelia y Gherbi, Andrea - Historia TPE-13:		
+    Como Secretaria quiero poder Dar de Alta, Baja y Modificar los materiales para que sean admitidos.
+    
+        TPE- 14 - Desarrollar vista formulario de alta de material
+			
+	TPE - 82 - Implementar tabla modelo de materiales aceptados
+	       Retorna el listado de los materiales aceptados registrados que hay en la cooperativa.
+			
+	TPE - 83 - Modificar controlador materiales para soportar formulario de ABM
+		Creacion de las siguientes funciones de editar, agregar y eliminar material.
