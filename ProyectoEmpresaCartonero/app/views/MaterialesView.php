@@ -55,6 +55,7 @@ class MaterialesView
             'mensaje', $mensaje );
         $this->smarty->display('./templates/form_materiales.tpl');
     }
+
     function registro_de_materiales($action,$materiales = null){
         $this->smarty->assign('titulo',
          "Registro de Materiales");

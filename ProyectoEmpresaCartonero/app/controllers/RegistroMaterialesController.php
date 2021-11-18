@@ -18,7 +18,7 @@ class RegistroMaterialesController {
 
     function showFormRegistroMat(){
         $materiales = $this->MaterialesAceptadosModel->obtenerMateriales();
-        $this->RegistroMaterialesView->registro_de_materiales($materiales);
+        $this->RegistroMaterialesView->registro_de_materiales('postRegistroMat',$materiales);
     }
 
     function postRegistroMat(){
