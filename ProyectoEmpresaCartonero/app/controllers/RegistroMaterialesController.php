@@ -1,8 +1,7 @@
 <?php
 include_once("app/models/RegistroMaterialesModels.php");
 include_once("app/views/MaterialesView.php");
-include_once("app/views/RegistroMaterialesView.php");
-include_once("aplicación/modelos/MaterialModel.php");
+include_once("app/models/MaterialModel.php");
 
 class RegistroMaterialesController {
 

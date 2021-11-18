@@ -29,6 +29,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="listRetiros">Listado de retiros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="listRetiros">Listado de retiros</a></li>
                         <li class="nav-item"><a class="nav-link" href="listMateriales">Productos aceptados</a></li>
                         <li class="nav-item"><a class="nav-link" href="showFormRetiro">Solicitar un retiro</a></li>
                     </ul>
