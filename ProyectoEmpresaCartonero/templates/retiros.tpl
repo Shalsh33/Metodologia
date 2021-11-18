@@ -24,7 +24,7 @@ horario preferido, domicilio, materiales a retirar y espacio que ocupa-->
             <p>Horario: {$retiro->franja_horaria}</p>
             <p>Direccion: {$retiro->direccion}</p>
             <p>Categoria: {$retiro->categoria}</p>
-            <p>Categoria: {$retiro->fecha_creacion}</p>
+            <p>Fecha de Creacion: {$retiro->fecha_creacion}</p>
             
         </div>
 
