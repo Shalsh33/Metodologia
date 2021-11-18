@@ -2,17 +2,22 @@
 
 require_once('libs/smarty/libs/Smarty.class.php');
 
-class MaterialesView
-{
+
+class View{
 
     private $smarty;
 
-    function __construct()
-    {
+    function __construct(){
         $this->smarty = new Smarty();
     }
 
-    /** 
+    function showFormRetiro($action){
+        $this->smarty->assign("titulo","Solicitar retiro");
+        $this->smarty->assign('action',$action);
+        $this->smarty->display('templates/solicitud_de_retiro.tpl');
+    }
+
+     /** 
      *   Muestra el listado de materiales aceptados actuales
      **/
     function mostrarMaterialesAceptados($materiales)
@@ -78,4 +83,14 @@ class MaterialesView
         );
         $this->smarty->display('templates/form_edit_material.tpl'); 
     }
+
+    function showRetiros($retiros){
+        
+        $this->smarty->assign("titulo","Lista de retiros");
+        $this->smarty->assign('retiros',$retiros);
+        $this->smarty->display('templates/retiros.tpl');
+        
+    }
+
+
 }
