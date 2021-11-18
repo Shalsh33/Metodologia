@@ -1,20 +1,25 @@
 <?php
 include_once("app/models/RegistroMaterialesModels.php");
 include_once("app/views/MaterialesView.php");
+include_once("app/views/RegistroMaterialesView.php");
+include_once("aplicación/modelos/MaterialModel.php");
 
 class RegistroMaterialesController {
 
-    private $RetirosView;
-    private $RetirosModel;
+    private $RegistroMaterialesView;
+    private $RegistroMaterialesModel;
+    private $MaterialesAceptadosModel;
 
     function __construct() {
         //////////////////////////////////
+        $this->MaterialesAceptadosModel = new MaterialModel();
         $this-> RegistroMaterialesView = new MaterialesView();
         $this-> RegistroMaterialesModel = new RegistroMaterialesModel();
     }
 
     function showFormRegistroMat(){
-        $this->RegistroMaterialesView->registro_de_materiales("postRegistroMat");
+        $materiales = $this->MaterialesAceptadosModel->getAll();
+        $this->RegistroMaterialesView->registro_de_materiales($materiales);
     }
 
     function postRegistroMat(){
