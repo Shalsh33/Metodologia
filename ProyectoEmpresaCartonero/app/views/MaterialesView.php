@@ -2,19 +2,70 @@
 
 require_once('libs/smarty/libs/Smarty.class.php');
 
-class MaterialesView{
+class MaterialesView
+{
 
     private $smarty;
 
-    function __construct(){
+    function __construct()
+    {
         $this->smarty = new Smarty();
     }
 
-    function show(){
-        $this->smarty->assign('titulo',
-        "Muestra los materiales y condiciones de aceptación para reciclar");
+    /** 
+     *   Muestra el listado de materiales aceptados actuales
+     **/
+    function mostrarMaterialesAceptados($materiales)
+    {
+
+        $this->smarty->debugging = true;
+        $this->smarty->assign('materiales', $materiales);
+        $this->smarty->assign('titulo', "Lista de materiales");
+
+        $this->smarty->display('templates/lista_material.tpl');
+    }
+    
+    function show()
+    {
+        $this->smarty->assign(
+            'titulo',
+            "Muestra los materiales y condiciones de aceptación para reciclar"
+        );
         $this->smarty->display('./templates/materiales.tpl');
     }
 
+    function listadoDeMateriales($materiales, $mensaje)
+    {
+        $this->smarty->assign('materiales', $materiales);
+        $this->smarty->assign(
+            'titulo',
+            "Listado de materiales"
+        );
+        $this->smarty->assign('mensaje', $mensaje );
+        $this->smarty->display('templates/lista_material.tpl');
+    }
 
+    function mostrarFormularioAlta($mensaje)
+    {
+        $this->smarty->assign(
+            'titulo',
+            "Ingreso de materiales"
+        );
+        $this->smarty->assign(
+            'mensaje', $mensaje );
+        $this->smarty->display('./templates/form_materiales.tpl');
+    }
+
+    function mostrarFormularioModificar()
+    {
+    }
+    
+    function editarMaterialVista($material){
+        $this->smarty->assign('material', $material);
+        $this->smarty->assign(
+            'titulo',
+            "Editar material"
+        );
+        $this->smarty->display('templates/form_edit_material.tpl'); 
+    }
 }

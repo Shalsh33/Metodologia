@@ -36,7 +36,24 @@ switch ($params[0]) {
         $controller = new RetirosController();
         $controller->showListRetiros();
         break;
-
+    case 'insertar_mat':
+        $controller = new MaterialController();
+        $controller-> agregarMateriales();
+        break;    
+    case 'eliminar_mat':
+        $controller = new MaterialController();
+        $id = $params[1];
+        $controller->eliminarMaterial($id);
+        break;
+    case 'editar_mat':
+        $controller = new MaterialController();
+        $id = $params[1];
+        $controller->editarMaterial($id);
+        break; 
+    case 'guardar_mat':
+        $controller = new MaterialController();
+        $controller->agregarUnMaterial();
+        break;    
     default:
         echo('404 Page not found');
         break;
