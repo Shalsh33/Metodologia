@@ -1,5 +1,7 @@
 <?php
 
+include_once("app/models/Model.php");
+
 class MaterialModel extends Model{
 
 

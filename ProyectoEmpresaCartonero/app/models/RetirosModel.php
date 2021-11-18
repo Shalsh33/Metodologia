@@ -1,5 +1,7 @@
 <?php
 
+include_once("app/models/Model.php");
+
 class RetirosModel extends Model{
 
     function postearRetiro($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria){

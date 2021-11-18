@@ -1,5 +1,7 @@
 <?php
 
+include_once("app/models/Model.php");
+
 class RegistroMaterialesModel extends Model{
 
     
