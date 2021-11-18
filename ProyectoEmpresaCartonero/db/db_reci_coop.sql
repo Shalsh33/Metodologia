@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2021 a las 22:49:58
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.6
+-- Tiempo de generación: 18-11-2021 a las 20:18:45
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,17 +57,21 @@ CREATE TABLE `retiros_cartonero` (
   `direccion` varchar(100) NOT NULL,
   `telefono` int(20) NOT NULL,
   `franja_horaria` varchar(20) NOT NULL,
-  `categoria` varchar(100) NOT NULL
+  `categoria` varchar(100) NOT NULL,
+  `fecha_creacion` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `retiros_cartonero`
 --
 
-INSERT INTO `retiros_cartonero` (`id_retiro_cartonero`, `nombre`, `apellido`, `direccion`, `telefono`, `franja_horaria`, `categoria`) VALUES
-(1, 'Ana', 'Gonzalez', 'French 910', 111112525, 'M', 'B'),
-(3, 'Pedro', 'Perez', 'San Martin 568', 8989898, 'T', 'C'),
-(4, 'Carlos', 'Gomez', 'aca nomas', 999999, 'T', 'B');
+INSERT INTO `retiros_cartonero` (`id_retiro_cartonero`, `nombre`, `apellido`, `direccion`, `telefono`, `franja_horaria`, `categoria`, `fecha_creacion`) VALUES
+(5, 'Juan', '123', '123', 123, 'M', 'A', '0000-00-00'),
+(6, '123123', '123123', '123123', 123123, 'M', 'A', '0000-00-00'),
+(7, '123', 'q', 'wqweqw', 2147483647, 'M', 'A', '0000-00-00'),
+(8, 'Tomas', '1', '123123', 2147483647, 'M', 'A', '0000-00-00'),
+(9, 'PEPE', 'CARRERA', 'Cangallo554', 2147483647, 'M', 'A', '2021-11-17'),
+(10, 'Golf', 'ALBION', '123', 2147483647, 'M', 'A', '2021-11-17');
 
 --
 -- Índices para tablas volcadas
@@ -99,7 +103,7 @@ ALTER TABLE `materiales`
 -- AUTO_INCREMENT de la tabla `retiros_cartonero`
 --
 ALTER TABLE `retiros_cartonero`
-  MODIFY `id_retiro_cartonero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_retiro_cartonero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
