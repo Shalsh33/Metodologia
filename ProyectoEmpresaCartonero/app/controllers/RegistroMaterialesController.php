@@ -16,9 +16,9 @@ class RegistroMaterialesController {
         $this-> RegistroMaterialesModel = new RegistroMaterialesModel();
     }
 
-    function showFormRegistroMat(){
+    function showFormRegistroMat($mensaje = null){
         $materiales = $this->MaterialesAceptadosModel->obtenerMateriales();
-        $this->RegistroMaterialesView->registro_de_materiales('postRegistroMat',$materiales);
+        $this->RegistroMaterialesView->registro_de_materiales('postRegistroMat',$materiales,$mensaje);
     }
 
     function postRegistroMat(){
@@ -33,7 +33,7 @@ class RegistroMaterialesController {
             $this->RegistroMaterialesModel->postearRegistroMat($materiales[$i], $peso[$i], $cartonero);
         }
         
-       header('Location: '. 'showFormRegistroMat');
+       $this->showFormRegistroMat('Pesaje cargado correctamente');
 
     }
 

@@ -1,7 +1,8 @@
 {include file="templates/header.tpl"}
 
-
-
+{if $mensaje}
+    <h2> {$mensaje} </h2>
+{/if}
             
         <form action="{$action}" id="form-materiales" method="POST" >
         <div id="content">
@@ -27,7 +28,7 @@
                 </div>
                 <div class="flex col-md-6 col-sd-12">
                     <label for="cant" class="col-md-4"> Ingrese la cantidad de kg: </label>
-                    <input class="col-md-6" type="number" name="cantidad[]" placeholder="Ingrese la cantidad de material"/>
+                    <input class="col-md-6" type="number" name="cantidad[]" placeholder="Ingrese la cantidad de material" required/>
                 </div>
             </div>
         </div>
