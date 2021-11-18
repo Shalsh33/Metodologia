@@ -1,19 +1,8 @@
 <?php
 
-class RetirosModel{
+include_once("app/models/Model.php");
 
-    private $db;
-
-    function __construct() {
-        // 1. Abro la conexión
-        $this->db = $this->connect();
-    }
-
-    private function connect(){
-        // 2. Conexion con la base
-        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'root', '');
-        return $db;
-    }
+class RetirosModel extends Model{
 
     function postearRetiro($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria){
 
