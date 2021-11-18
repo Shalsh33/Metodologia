@@ -1,20 +1,7 @@
 <?php
 
-class MaterialModel{
+class MaterialModel extends Model{
 
-    private $db;
-
-    function __construct() {
-        // 1. Abro la conexión
-        $this->db = $this->connect();
-    }
-
-    private function connect(){
-        // 2. Conexion con la base
-        $db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'root', '');
-        //$db = new PDO('mysql:host=localhost;'.'dbname=db_reci_coop;charset=utf8', 'noelia', '');
-        return $db;
-    }
 
     /**
      * Registra un nuevo material
