@@ -16,5 +16,4 @@ class UserView{
         $this->smarty->display('templates/solicitud_de_retiro.tpl');
     }
 
-
 }

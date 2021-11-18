@@ -33,7 +33,6 @@ class RetirosController {
         if (empty($nombre) || empty($apellido) || empty($direccion) || empty($telefono) || empty($franja_horaria) || empty($categoria)){
 
             header("Location: " . BASE_URL . "showFormRetiro");
-            
             die();
         }
         
