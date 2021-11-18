@@ -24,24 +24,16 @@ class RegistroMaterialesController {
     function postRegistroMat(){
         
         //obtengo los datos del retiro
-        $tipo = $_POST['tipo'];
-        $peso = $_POST['peso'];
+        $materiales = $_POST['material'];
+        $peso = $_POST['cantidad'];
         $cartonero = $_POST['cartonero'];
         
-        if (empty($tipo) || empty($peso)){
-
-            $this->view->showError('Faltaron datos obligatorios');
-            
-            die();
-        }
-
-        if (empty($cartonero)){
-            $cartonero= 'cooperativa';
+        //mandamos los datos a el modelo
+        for($i=0;$i<count($materiales);$i++){
+            $this->RegistroMaterialesModel->postearRegistroMat($materiales[$i], $peso[$i], $cartonero);
         }
         
-        //mandamos los datos a el modelo
-        $this->RetirosModel->postearRegistroMat($tipo, $peso, $cartonero);
-        header("Location: " . BASE_URL . "showFormRegistroMat");
+       header('Location: '. 'showFormRegistroMat');
 
     }
 

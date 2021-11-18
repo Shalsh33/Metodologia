@@ -21,7 +21,7 @@
                     <label for="material" class="col-md-4"> Ingrese el material: </label>
                     <select class="col-md-6" type="text" name="material[]">
                         {foreach $materiales as $material}
-                            <option value="{$material->id}">{$material->nombre}</option>
+                            <option value="{$material->id_material}">{$material->nombre}</option>
                         {/foreach}
                     </select>
                 </div>

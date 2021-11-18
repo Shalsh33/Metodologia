@@ -20,4 +20,6 @@ class RegistroMaterialesModel{
         $query ->execute([$tipo, $peso, $cartonero]);
     }
 
+
+
 }

@@ -62,7 +62,7 @@ switch ($params[0]) {
         break;
     case 'postRegistroMat':
         $controller = new RegistroMaterialesController();
-        $controller-> showFormRegistroMat();
+        $controller-> postRegistroMat();
         break;
     default:
         echo('404 Page not found');

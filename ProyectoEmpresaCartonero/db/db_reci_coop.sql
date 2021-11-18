@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2021 a las 20:18:45
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Tiempo de generación: 18-11-2021 a las 21:32:50
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,6 +47,29 @@ INSERT INTO `materiales` (`id_material`, `nombre`, `descripcion`, `es_aceptado`)
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `registro_materiales`
+--
+
+CREATE TABLE `registro_materiales` (
+  `id` int(11) NOT NULL,
+  `cartonero` int(11) NOT NULL,
+  `tipo` int(11) NOT NULL,
+  `peso` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `registro_materiales`
+--
+
+INSERT INTO `registro_materiales` (`id`, `cartonero`, `tipo`, `peso`) VALUES
+(1, 1, 1, 12),
+(2, 1, 1, 0),
+(3, 3, 1, 22),
+(4, 3, 3, 130);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `retiros_cartonero`
 --
 
@@ -84,6 +107,12 @@ ALTER TABLE `materiales`
   ADD PRIMARY KEY (`id_material`);
 
 --
+-- Indices de la tabla `registro_materiales`
+--
+ALTER TABLE `registro_materiales`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `retiros_cartonero`
 --
 ALTER TABLE `retiros_cartonero`
@@ -98,6 +127,12 @@ ALTER TABLE `retiros_cartonero`
 --
 ALTER TABLE `materiales`
   MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `registro_materiales`
+--
+ALTER TABLE `registro_materiales`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `retiros_cartonero`
