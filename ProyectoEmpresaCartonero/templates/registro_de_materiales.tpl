@@ -4,7 +4,7 @@
 
             
         <form action="{$action}" id="form-materiales" method="POST" >
-
+        <div id="content">
             <div class="row">
                 
                     <label for="cartonero" class="col-md-4" > Elija el cartonero: </label>
@@ -16,7 +16,7 @@
                 
                
             </div>
-            <div class="row mt-2">
+            <div class="row mt-2" id="mat">
                 <div class="flex col-md-6 col-sd-12">
                     <label for="material" class="col-md-4"> Ingrese el material: </label>
                     <select class="col-md-6" type="text" name="material[]">
@@ -30,8 +30,9 @@
                     <input class="col-md-6" type="number" name="cantidad[]" placeholder="Ingrese la cantidad de material"/>
                 </div>
             </div>
+        </div>
             <div class="row mt-2 mb-2">
-                <button id="addColumn">Agregar un material</button>
+                <button type="button" id="addColumn">Agregar un material</button>
                 <button type="submit">Enviar pesaje</button>
             </div>
 
@@ -40,5 +41,5 @@
         </form>
 
 
-
+<script src="templates/js/script.js"></script>
 {include file="templates/footer.tpl"}
