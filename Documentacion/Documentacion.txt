@@ -72,3 +72,18 @@
 			
 	TPE - 83 - Modificar controlador materiales para soportar formulario de ABM
 		Creacion de las siguientes funciones de editar, agregar y eliminar material.
+
+17/11 Cisneros - Martínez TPE 15:
+	Implementada la función de la vista registro_de_materiales, que recibe una acción (La cual es usada por el form para hacer el ruteo),
+	Una lista de materiales (Para mostrar en el select de imputación) y un mensaje opcional (Con el resultado de la operación de carga).
+	
+	Implementadas las funciones del controlador showFormRegistroMat y postRegistroMat, las cuales muestran el formulario de 
+	imputación de materiales y lo reciben para cargarlo en la base de datos.
+
+	Creada la Tabla registro_materiales donde se vinculan el id del cartonero, el id del material imputado y la cantidad.
+	Creado el RegistroMaterialesModel, con la función para cargar una imputación de materiales.
+
+18/11 - Carrera, Carrizo, Cisneros, Martínez, Rust:
+	Refactoreo del sistema. Unificadas las vistas y los controladores en una sola clase.
+	Las funciones comunes a los modelos fueron trasladados a una superclase.
+	Correcciones de bugs menores tras el testing pormenorizado.
